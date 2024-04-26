@@ -59,3 +59,7 @@ class dataBase
         $this->conn->close();
     }
 }
+
+$db = new dataBase();
+
+
