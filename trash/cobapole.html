@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'tahoma';
+            src: url('font/tahoma.ttf');
+        }
+        * {
+            width: 21cm;
+            height: 29.7cm;
+            font-family: Tahoma, sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: url('kartu.jpg');
+            background-size: cover;
+            width: 21cm;
+            height: 29.7cm;
+            display: flex;
+            flex-direction: column;
+        }
+        .container .atas{
+            flex: 380px;
+            height: 250px;
+            padding: 17px;
+            display: flex;
+            gap: 30px;
+            border: 1px solid blue;
+        }
+        .atas .kiri, .atas .kanan{
+            border: 1px solid violet;
+            position: relative;
+            height: 245px;
+            padding: 20px;
+        }
+        .atas .kanan .konten{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            border: 1px solid saddlebrown;
+        }
+        .atas .kanan .konten img{
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 35px;
+            height: 35px;
+        }
+        .atas .kanan .konten .identitas{
+            width: 100%;
+            height: 110px;
+            margin-top: 80px;
+            border: 1px solid darkblue;
+            padding: 1px 10px 0 17px;
+        }
+        .atas .kanan .konten .identitas span{
+            font-size: 9px;
+            letter-spacing: 0.8px;
+            /* word-spacing: 2px; */
+            text-justify: inter-word;
+        }
+        .container .bawah{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="atas">
+            <div class="kiri"></div>
+            <div class="kanan">
+                <div class="konten">
+                    <img src="https://socs.binus.ac.id/files/2018/12/aswin-1.jpg" alt="">
+                    <div class="identitas">
+                        <span><b>MUHAMMAD UWAIS AL -QORNIE AS-SYAFI'E</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bawah"></div>
+    </div>
+</body>
+</html>

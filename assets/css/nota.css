@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.container {
+    width: 180mm;
+    height: 140mm;
+    margin: auto;
+}
+
+.header {
+    text-align: center;
+}
+
+.logo {
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.pembayaran {
+    background-color: #e0e0e0;
+    border: 1px dashed #000;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-nota {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-gap: 90px;
+    height: 65px;
+    padding: 0 0 0 8px;
+}
+
+.left .nota,
+.right .nota {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    margin: 5px;
+}
+
+/* .detail-pembayaran {
+    align-items: center;
+    text-align: left;
+} */
+
+.header-pembayaran,
+.data-pembayaran {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    text-align: left;
+    padding: 0 0 0 10px;
+    margin-top: 5px;
+}
+
+.header-pembayaran {
+    background-color: #e0e0e0;
+    border: 1px dashed #000;
+    height: auto;
+    padding: 5px 0 5px 10px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+.data span:not(:first-of-type) {
+    margin-top: 5px;
+}
+
+.end-nota{
+    display: flex;
+    flex-direction: column;
+}
+.end-nota .end {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    text-align: left;
+    padding: 0 10px 0 10px;
+    margin-top: 5px;
+}
+.end-nota .ttd{
+    display: flex;
+    flex-direction: column;
+    float: right;
+    text-align: left;
+    width: 200px;
+}
+.end-nota .catatan{
+    justify-content: space-between;
+    text-align: left;
+    top: 0;
+}
+.end-nota .catatan span:nth-child(2){
+    margin-left: 40px;
+}
+
+.end-nota .ttd span:nth-child(1){
+    margin-top: 20px;
+}
+.end-nota .ttd span:nth-child(2){
+    margin-top: 25px;
+}
+
+.end-nota .akhir {
+    text-align: end;
+    align-items: flex-end;
+    margin: 0 30px 10px;
+}
+
+@media print {
+    .pembayaran {
+        background-color: #e0e0e0;
+    }
+    .header-pembayaran {
+        background-color: #e0e0e0;
+    }
+}
