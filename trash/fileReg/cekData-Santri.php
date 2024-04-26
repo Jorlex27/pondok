@@ -14,6 +14,8 @@ function cekDataSantri($id, $conn2)
 
 $dataS = cekDataSantri("9738", $conn2)->fetch_assoc();
 
-echo '<pre>';
-print_r($dataS);
-echo '</pre>';
+// echo '<pre>';
+// print_r($dataS);
+// echo '</pre>';
+
+echo json_encode($dataS);
