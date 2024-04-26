@@ -74,45 +74,12 @@ left join kelas as k on k.id_md = m.id where m.name = '$Apdata' ORDER BY kelas A
       <thead>
         <tr>
           <th>No</th>
-          <th>Foto</th>
           <th>Induk Sentral</th>
-          <th class="kolom-hidden">Id Diniyah</th>
-          <th class="kolom-hidden">Induk Diniyah</th>
-          <th class="kolom-hidden">Induk Ammiyah</th>
-          <th class="kolom-hidden">Induk Mahasiswa</th>
           <th>Nama</th>
           <th>Kelas Diniyah</th>
           <th>Kelas Ammiyah</th>
           <th>Domisili</th>
           <th>Tahun Masuk</th>
-          <th class="kolom-hidden">NO. KK</th>
-          <th class="kolom-hidden">NIK Santri</th>
-          <th class="kolom-hidden">Tempat Lahir</th>
-          <th class="kolom-hidden">Tanggal Lahir</th>
-          <th class="kolom-hidden">Gender</th>
-          <th class="kolom-hidden">Agama</th>
-          <th class="kolom-hidden">Dusun</th>
-          <th class="kolom-hidden">Desa</th>
-          <th class="kolom-hidden">Kecamatan</th>
-          <th class="kolom-hidden">Kabupaten</th>
-          <th class="kolom-hidden">Provinsi</th>
-          <th class="kolom-hidden">Kode Pos</th>
-          <th class="kolom-hidden">Anak Ke</th>
-          <th class="kolom-hidden">Jmlh Saudara</th>
-          <th class="kolom-hidden">Gol. Darah</th>
-          <th class="kolom-hidden">Ayah</th>
-          <th class="kolom-hidden">NIK Ayah</th>
-          <th class="kolom-hidden">Tempat Lahir</th>
-          <th class="kolom-hidden">Tanggal Lahir</th>
-          <th class="kolom-hidden">Pendidikan Terakhir</th>
-          <th class="kolom-hidden">Pekerjaan</th>
-          <th class="kolom-hidden">Ibu</th>
-          <th class="kolom-hidden">NIK Ibu</th>
-          <th class="kolom-hidden">Tempat Lahir</th>
-          <th class="kolom-hidden">Tanggal Lahir</th>
-          <th class="kolom-hidden">Pendidikan Terakhir</th>
-          <th class="kolom-hidden">Pekerjaan</th>
-          <th class="kolom-hidden">No HP</th>
           <th>Status</th>
           <th>Action</th>
         </tr>
@@ -136,45 +103,12 @@ left join kelas as k on k.id_md = m.id where m.name = '$Apdata' ORDER BY kelas A
         ?>
               <tr>
                 <td><?php echo $nomer++; ?></td>
-                <td class="gambar"><img src="../assets/uploads/sans/<?php echo $d['foto'] ?>" alt=""></td>
                 <td><?php echo $d['ids'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['id_d1'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['id_d'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['id_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['id_m'] ?> </td>
                 <td><?php echo $d['nama'] ?> </td>
                 <td><?php echo $d['kls_din'] . ' ' . $d['jenjang_din'] ?> </td>
                 <td><?php echo $d['kls_am'] . ' ' . $d['jenjang_am']  ?> </td>
                 <td><?php echo $d['dom'] . ' ' . $d['no_kamar'] ?> </td>
                 <td><?php echo $d['tahun_masuk'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['no_kk'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['nik'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tempat_lahir'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tanggal'] . ' ' . $bulan . ' ' . $d['tahun'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['gender'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['agama'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['dusun'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['desa'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['kecamatan'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['kabupaten'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['provinsi'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['kode_pos'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['anak_ke'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['jumlah_saudara'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['gol_darah'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['ayah'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['nik_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tl_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tgl_a'] . ' ' . $bulan_a . ' ' . $d['tahun_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['pendidikan_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['pekerjaan_a'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['ibu'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['nik_i'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tl_i'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['tgl_i'] . ' ' . $bulan_i . ' ' . $d['tahun_i'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['pendidikan_i'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['pekerjaan_i'] ?> </td>
-                <td class="kolom-hidden"><?php echo $d['no_hp'] ?> </td>
                 <td><?php echo $d['status'] ?> </td>
                 <td>
                   <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $d['ids'] ?>" <?php echo $dis ?>><i class="material-icons" style="font-size: 12px;">edit</i></button>
