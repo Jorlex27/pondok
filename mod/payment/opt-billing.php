@@ -17,19 +17,19 @@ if ($action == "add" && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $uang_dansos = (float)str_replace(['Rp. ', ',', '.'], '', $_POST['uang_dansos']);
     $uang_hari_jadi = (float)str_replace(['Rp. ', ',', '.'], '', $_POST['uang_hari_jadi']);
     $total = $uang_pangkal + $uang_gedung + $uang_pembangunan + $uang_ianah + $uang_dansos + $uang_hari_jadi;
-
+    $jenis = 'lama';
     try {
         session_start();
         $thn = $_SESSION['thn_ajaran'];
 
-        $c = $conn->query("SELECT id_spp FROM spp WHERE name = $nama_spp AND jenjang = '$jenjang' AND dom = '$dom' AND thn_ajaran = '$thn'");
+        // $c = $conn->query("SELECT id_spp FROM spp WHERE name = $nama_spp AND jenjang = '$jenjang' AND dom = '$dom' AND thn_ajaran = '$thn'");
 
-        if ($c->num_rows > 0) {
-            throw new Exception("ada_data");
-        }
+        // if ($c->num_rows > 0) {
+        //     throw new Exception("ada_data");
+        // }
 
-        $stmt = $conn->prepare("INSERT INTO spp (name, jenjang, dom, pangkal, gedung, pembangunan, ianah, dansos, hari_jadi, total, thn_ajaran) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssddddddds", $nama_spp, $jenjang, $dom, $uang_pangkal, $uang_gedung, $uang_pembangunan, $uang_ianah, $uang_dansos, $uang_hari_jadi, $total, $thn);
+        $stmt = $conn->prepare("INSERT INTO spp (name, jenis, jenjang, dom, pangkal, gedung, pembangunan, ianah, dansos, hari_jadi, total, thn_ajaran) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssddddddds", $nama_spp, $jenis, $jenjang, $dom, $uang_pangkal, $uang_gedung, $uang_pembangunan, $uang_ianah, $uang_dansos, $uang_hari_jadi, $total, $thn);
 
         if ($stmt->execute()) {
             $conn->commit();
