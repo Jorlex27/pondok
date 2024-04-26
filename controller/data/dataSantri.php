@@ -7,16 +7,16 @@ class DataSantri{
         $this->db = new dataBase;
     }
 
-    public function getData(){
+    public function getData() {
         $query = "SELECT * FROM santri WHERE status = 'AKTIF'";
         $result = $this->db->getAllRows($query);
         return $result;
     }
+    
 }
 
 $c = new DataSantri;
 $data = $c->getData();
-// print_r($data);
 
 // $db = new dataBase;
 // $query = "SELECT * FROM santri WHERE status = 'AKTIF'";
