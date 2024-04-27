@@ -46,6 +46,20 @@ FROM registrasi order by tanggal_reg DESC");
         margin: 0;
         padding: 0;
     }
+
+    @keyframes custom-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.custom-loading {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: custom-spin 1s linear infinite;
+}
+
 </style>
 <div class="container1">
     <div class="table-container">
@@ -319,7 +333,21 @@ require '../tem/foot.php';
     }
 
     if (id) {
-        printPage(id)
+        setTimeout(() => {
+            Swal.fire({
+                title: 'Dentek luh...!',
+                html: '<div class="custom-loading"></div>',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                onBeforeOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+        }, 1000)
+
+        setTimeout(() => {
+            printPage(id)
+        }, 3000)
     }
 
     function cetak(id_not, name) {
@@ -359,6 +387,7 @@ require '../tem/foot.php';
         });
     }
     // printPage()
+
 </script>
 
 </body>
