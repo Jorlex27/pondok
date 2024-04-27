@@ -14,7 +14,7 @@ if (!$conn2) {
 }
 
 
-$ids = '37';
+$ids = '202404327';
 
 /*
 1. cek bedeh jek santrenah
@@ -32,7 +32,7 @@ $ids = '37';
 3. hapus pembayaran dan data-nya
 */
 
-// hapus($ids, $conn2);
+hapus($ids, $conn2);
 
 
 function ceksantri($ids, $conn2)
@@ -202,12 +202,12 @@ function updatePerDataReg($id, $conn2, $item, $itemBaru){
 
 // echo deleteDataReg(1797220004198065, $conn2);
 
-echo updatePerDataReg("1797220122194811", $conn2, "dom", "LPPK");
-$dataR = cekDataReg("1797220122194811", $conn2)->fetch_assoc();
+// echo updatePerDataReg("1797220122194811", $conn2, "dom", "LPPK");
+// $dataR = cekDataReg("1797220122194811", $conn2)->fetch_assoc();
 
-echo '<pre>';
-print_r($dataR);
-echo '</pre>';
+// echo '<pre>';
+// print_r($dataR);
+// echo '</pre>';
 
 
 // $id = "1587945649854645";
