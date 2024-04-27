@@ -314,7 +314,7 @@ require '../tem/foot.php';
     let id = getParameterByName('id')
 
 
-    if (!(id_c === false && id === false)) {
+    if (!(id_not === false && id === false)) {
         cetakYuk(id_not, id);
     }
 
