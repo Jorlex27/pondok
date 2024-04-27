@@ -48,18 +48,23 @@ FROM registrasi order by tanggal_reg DESC");
     }
 
     @keyframes custom-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.custom-loading {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #7983ff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: custom-spin 1s linear infinite;
-}
+        0% {
+            transform: rotate(0deg);
+        }
 
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .custom-loading {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #7983ff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: custom-spin 1s linear infinite;
+    }
 </style>
 <div class="container1">
     <div class="table-container">
@@ -308,46 +313,34 @@ require '../tem/foot.php';
     var id_not = getParameterByName('id_not');
     let id = getParameterByName('id')
 
-    if (id_not) {
+
+    if (!(id_c === false && id === false)) {
+        cetakYuk(id_not, id);
+    }
+
+    function cetakYuk(id_not, id) {
         Swal.fire({
-            title: 'Pembayaran berhasil!',
-            text: 'Cetak nota?',
-            icon: 'success',
+            title: 'Dentek luh...! Pilih yang mana?',
+            html: '<div class="custom-loading"></div>',
             showCancelButton: true,
-            confirmButtonText: 'Ya',
-            cancelButtonText: 'Tidak'
+            showConfirmButton: true,
+            confirmButtonText: 'Cetak Biodata',
+            cancelButtonText: 'Cetak Nota',
+            allowOutsideClick: false,
+            persistent: true,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
         }).then((result) => {
             if (result.isConfirmed) {
-                let id = getParameterByName('id')
+                printPage(id);
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
                 var printUrl = "../print/payment/nota?" +
                     "id_not=" + id_not;
                 window.open(printUrl, "_blank");
-                setTimeout(() => {
-                    printPage(id)
-                }, 2000)
-                removeParameterFromURL('id_not');
-            } else {
                 removeParameterFromURL('id_not');
             }
         });
-    }
-
-    if (id) {
-        setTimeout(() => {
-            Swal.fire({
-                title: 'Dentek luh...!',
-                html: '<div class="custom-loading"></div>',
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                onBeforeOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-        }, 1000)
-
-        setTimeout(() => {
-            printPage(id)
-        }, 3000)
     }
 
     function cetak(id_not, name) {
