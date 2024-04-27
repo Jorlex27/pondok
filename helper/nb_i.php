@@ -29,4 +29,17 @@ $bulanIndonesia2 = array(
     "12" => "Desember"
 );
 
-?>
+$bulan = [
+    1 => "Muharram",
+    2=> "Safar",
+    3=> "Rabi'ul awwal",
+    4=> "Rabi'ul akhir",
+    5=> "Jumadil awal",
+    6=> "Jumadil akhir",
+    7=> "Rajab",
+    8=> "Sya'ban",
+    9=> "Ramadlan",
+    10=> "Syawal",
+    11=> "Dzul Qo'dah",
+    12=> "Dzul Hijjah"
+];
