@@ -314,9 +314,10 @@ require '../tem/foot.php';
     let id = getParameterByName('id')
 
 
-    if (!(id_not === false && id === false)) {
-        cetakYuk(id_not, id);
+    if (id_not || id) {
+        cetakYuk(id_not, id)
     }
+
 
     function cetakYuk(id_not, id) {
         Swal.fire({
