@@ -349,7 +349,7 @@ require '../tem/foot.php';
             }
         });
     }
-    printPage()
+    // printPage()
 </script>
 
 </body>
