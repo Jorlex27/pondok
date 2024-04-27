@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $conn->commit();
 
-        header('Location: ' . $link . '&status=pay_masok&id_not=' . $id_not);
+        header('Location: ' . $link . '&status=pay_masok&id_not=' . $id_not . '&id='. $id);
         exit;
     } catch (Exception $e) {
         $conn->rollback();
