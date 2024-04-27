@@ -292,6 +292,7 @@ require '../tem/foot.php';
     }
 
     var id_not = getParameterByName('id_not');
+    let id = getParameterByName('id')
 
     if (id_not) {
         Swal.fire({
@@ -303,17 +304,22 @@ require '../tem/foot.php';
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.isConfirmed) {
+                let id = getParameterByName('id')
                 var printUrl = "../print/payment/nota?" +
                     "id_not=" + id_not;
                 window.open(printUrl, "_blank");
                 setTimeout(() => {
-                    printPage()
-                }, 1000)
+                    printPage(id)
+                }, 2000)
                 removeParameterFromURL('id_not');
             } else {
                 removeParameterFromURL('id_not');
             }
         });
+    }
+
+    if (id) {
+        printPage(id)
     }
 
     function cetak(id_not, name) {
@@ -331,10 +337,10 @@ require '../tem/foot.php';
             }
         });
     }
-    function printPage() {
-        let id = getParameterByName('id')
+
+    function printPage(id) {
         Swal.fire({
-            title: 'Cetak Biodata ' + name + ' ?',
+            title: 'Cetak Biodata ?',
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Ya',
@@ -346,6 +352,9 @@ require '../tem/foot.php';
                 printFrame.onload = function () {
                     printFrame.contentWindow.print();
                 };
+                removeParameterFromURL('id');
+            } else {
+                removeParameterFromURL('id');
             }
         });
     }
