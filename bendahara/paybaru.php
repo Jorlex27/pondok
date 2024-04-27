@@ -49,7 +49,8 @@ FROM registrasi order by tanggal_reg DESC");
 </style>
 <div class="container1">
     <div class="table-container">
-        <button class="btn btn-info btn-sm m-3" data-bs-toggle="modal" data-bs-target="#add_class"><i class="bx bx-plus"></i> Bill</button>
+        <button class="btn btn-info btn-sm m-3" data-bs-toggle="modal" data-bs-target="#add_class"><i
+                class="bx bx-plus"></i> Bill</button>
         <table id="myTable" class="display">
             <thead>
                 <tr>
@@ -65,16 +66,16 @@ FROM registrasi order by tanggal_reg DESC");
             <tbody>
                 <?php
                 $nomer = 1;
-                foreach ($a as $d) :
+                foreach ($a as $d):
                     if ($d['jenjang_am'] === 'TK') {
                         $jenjang = $d['jenjang_am'];
                     } else {
                         $jenjang = $d['kls_din'] . ' ' . $d['jenjang_din'];
                     }
-                ?>
+                    ?>
                     <tr>
-                        <td><?php echo $nomer++ ; ?></td>
-                        <td><?php echo $d['id'] ; ?></td>
+                        <td><?php echo $nomer++; ?></td>
+                        <td><?php echo $d['id']; ?></td>
                         <td><?php echo $d['nama'] ?></td>
                         <td><?php echo $jenjang ?></td>
                         <td><?php echo $d['ayah'] ?></td>
@@ -203,6 +204,7 @@ FROM registrasi order by tanggal_reg DESC");
             </form>
         </div>
     </div>
+    <iframe id="printFrame" style="display:none;"></iframe>
 </div>
 
 <?php
@@ -229,15 +231,15 @@ require '../tem/foot.php';
 </script>
 
 <script>
-    $(document).ready(function() {
-        $("#ids").keypress(function(e) {
+    $(document).ready(function () {
+        $("#ids").keypress(function (e) {
             if (e.which == 13) {
                 e.preventDefault();
                 $("#btnLanjut").click();
             }
         });
 
-        $("#btnLanjut").click(function() {
+        $("#btnLanjut").click(function () {
             var id_c = $("#id_c").val();
             var type = $("input[name='type-pembayaran']:checked").val();
 
@@ -247,12 +249,12 @@ require '../tem/foot.php';
                 data: {
                     id_c: id_c,
                 },
-                success: function(data) {
+                success: function (data) {
                     $("#myModal .modal-body").html(data);
                     $("#myModal").modal('show');
                     $("#pembayaran").focus();
                 },
-                error: function() {
+                error: function () {
                     alert("Terjadi kesalahan.");
                 }
             });
@@ -304,6 +306,9 @@ require '../tem/foot.php';
                 var printUrl = "../print/payment/nota?" +
                     "id_not=" + id_not;
                 window.open(printUrl, "_blank");
+                setTimeout(() => {
+                    printPage()
+                }, 1000)
                 removeParameterFromURL('id_not');
             } else {
                 removeParameterFromURL('id_not');
@@ -326,6 +331,25 @@ require '../tem/foot.php';
             }
         });
     }
+    function printPage() {
+        let id = getParameterByName('id')
+        Swal.fire({
+            title: 'Cetak Biodata ' + name + ' ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let printFrame = document.getElementById('printFrame');
+                printFrame.src = '../biodata/index' + "?id=" + id;
+                printFrame.onload = function () {
+                    printFrame.contentWindow.print();
+                };
+            }
+        });
+    }
+    printPage()
 </script>
 
 </body>
