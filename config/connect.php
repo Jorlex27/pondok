@@ -2,7 +2,7 @@
 
 class dataBase
 {
-    private $host = "localhost";
+    private $host = "153.92.13.204";
     private $user = "u462981871_pondok";
     private $pass = "Norali12";
     private $database = "u462981871_pondokku";
