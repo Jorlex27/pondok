@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'diodrum';
+    src: url('../font/Diodrum-Medium.ttf');
+  }
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../images/1612351.jpg');
+  font-family: 'diodrum';
+}
+
+.login-container {
+    width: 800px;
+    font-size: 30px;
+    height: 350px;
+    display: flex;
+    background-color: rgba(228, 228, 228, 0.9);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+  .logo img {
+  width: 170px;
+  height: auto;
+}
+
+.login-form {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0);
+    /* backdrop-filter: blur(8px); */
+}
+
+
+.login-form h2 {
+  margin-bottom: 40px;
+}
+
+.login-form form {
+    width: 100%;
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-form input,
+  .login-form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .login-form button{
+    width: 90px;
+  }
+  .login-form input {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form input:focus {
+    background-color: white;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Mengatur lebar input */
+  @media (min-width: 768px) {
+    .login-form input,
+    .login-form button {
+      max-width: 300px;
+      margin: 10px auto;
+    }
+  }

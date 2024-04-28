@@ -1,0 +1,100 @@
+.container-3 {
+    /* margin-top: 20px; */
+    display: flex;
+    max-width: 800px;
+    min-width: 700px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.form-container-3 {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container-3 h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.form-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Perbaikan: tambahkan align-items: flex-start; */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: calc(50% - 10px);
+}
+/*
+.input-group.left {
+    // Menghapus properti display, justify-content, dan align-items 
+}
+*/
+
+.input-group label {
+    color: #99c4e0;
+    margin-top: 20px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group textarea,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background-color: transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group input[type="tel"]:focus,
+.input-group textarea:focus{
+    outline: none;
+    border-bottom-color: #3498db;
+}
+
+.input-group button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+    background-color: #2980b9;
+}
+
+.image-upload {
+    text-align: center;
+}
+
+.image-upload input[type="file"] {
+    display: none;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #3498db;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+    border-color: #2980b9;
+}

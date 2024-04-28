@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'arab-ku';
+  src: url('../font/BDavat.ttf');
+}
+
+.home-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* top: 0;
+  position: fixed; */
+}
+
+.cool-header {
+  background: var(--light-hed);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* border-radius: 10px 10px 10px 10px; */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cool-header .home-content .iconmonstr-menu {
+  font-size: 24px;
+  color: white;
+}
+
+.cool-header .home-content .text {
+  font-size: 1.2rem;
+  color: white;
+}
+.cool-header .home-content .dashboard{
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'arab-ku';
+  text-shadow: #333;
+}
+.cool-header .bx-menu{
+    cursor: pointer;
+}
+.cool-header .profile{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cool-header .profile .detail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.cool-header .profile .detail span:nth-child(2){
+    font-size: 10px;
+}
+
+.profile-dropdown {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-dropdown img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: white;
+  border-radius: 4px;
+  top: 45px;
+  right: 0;
+  display: none;
+  font-size: 14px;
+  z-index: 1000;
+}
+
+.dropdown-content .item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+.dropdown-content .bx{
+    font-size: 14px;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
