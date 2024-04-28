@@ -11,7 +11,7 @@ function cekDataReg($id, $conn2)
     return $data;
 }
 
-$dataR = cekDataReg("1797220122194811", $conn2)->fetch_assoc();
+$dataR = cekDataReg("1797493478396742", $conn2)->fetch_assoc();
 
 echo '<pre>';
 print_r($dataR);
