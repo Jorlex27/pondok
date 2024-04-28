@@ -19,4 +19,4 @@ $dataS = cekDataSantri("202305158", $conn2)->fetch_assoc();
 // echo '</pre>';
 
 
-// echo json_encode($dataS);
+echo json_encode($dataS);
