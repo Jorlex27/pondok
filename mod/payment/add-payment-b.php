@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $thn = $_SESSION['thn_ajaran'];
 
         // ids baru
-        $sql = "SELECT MAX(SUBSTRING(ids, 7)) AS max_nomor_urut 
-        FROM santri ";
+        $sql = "SELECT MAX(SUBSTRING(ids, 7)) AS max_nomor_urut FROM santri";
         $result = $conn->query($sql);
         
         if(!$result){
@@ -116,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $conn->commit();
 
-        header('Location: ' . $link . '&status=pay_masok&id_not=' . $id_not . '&id='. $id);
+        header('Location: ' . $link . '&status=pay_masok&id_not=' . $id_not . '&id='. $ids);
         exit;
     } catch (Exception $e) {
         $conn->rollback();
