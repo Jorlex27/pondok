@@ -46,6 +46,25 @@ FROM registrasi order by tanggal_reg DESC");
         margin: 0;
         padding: 0;
     }
+
+    @keyframes custom-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .custom-loading {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left-color: #7983ff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: custom-spin 1s linear infinite;
+    }
 </style>
 <div class="container1">
     <div class="table-container">
@@ -292,25 +311,33 @@ require '../tem/foot.php';
     }
 
     var id_not = getParameterByName('id_not');
+    let id = getParameterByName('id')
 
-    if (id_not) {
+
+    if (id_not || id) {
+        cetakYuk(id_not, id)
+    }
+
+    function cetakYuk(id_not, id) {
         Swal.fire({
-            title: 'Pembayaran berhasil!',
-            text: 'Cetak nota?',
-            icon: 'success',
+            title: 'Dentek luh...! Pilih yang mana?',
+            html: '<div class="custom-loading"></div>',
             showCancelButton: true,
-            confirmButtonText: 'Ya',
-            cancelButtonText: 'Tidak'
+            showConfirmButton: true,
+            confirmButtonText: 'Cetak Biodata',
+            cancelButtonText: 'Cetak Nota',
+            allowOutsideClick: false,
+            persistent: true,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
         }).then((result) => {
             if (result.isConfirmed) {
+                printPage(id);
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
                 var printUrl = "../print/payment/nota?" +
                     "id_not=" + id_not;
                 window.open(printUrl, "_blank");
-                setTimeout(() => {
-                    printPage()
-                }, 1000)
-                removeParameterFromURL('id_not');
-            } else {
                 removeParameterFromURL('id_not');
             }
         });
@@ -331,10 +358,10 @@ require '../tem/foot.php';
             }
         });
     }
-    function printPage() {
-        let id = getParameterByName('id')
+
+    function printPage(id) {
         Swal.fire({
-            title: 'Cetak Biodata ' + name + ' ?',
+            title: 'Cetak Biodata ?',
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Ya',
@@ -346,10 +373,14 @@ require '../tem/foot.php';
                 printFrame.onload = function () {
                     printFrame.contentWindow.print();
                 };
+                removeParameterFromURL('id');
+            } else {
+                removeParameterFromURL('id');
             }
         });
     }
-    printPage()
+    // printPage()
+
 </script>
 
 </body>

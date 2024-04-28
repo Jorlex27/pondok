@@ -100,6 +100,7 @@ $sans = $conn->query("SELECT ids, nama, kls_din, jenjang_din, dom, no_kamar FROM
                         <td><?php echo $d['diskon'] ?> %</td>
                         <td>Rp. <?php echo number_format($d['sisa'], 0, ',', '.') ?></td>
                         <td>
+                            <button class="btn btn-warning btn-sm" onclick="printPage('<?php echo $d['ids']; ?>')"><i class="bx bxs-user-rectangle" style="font-size: 14px;"></i></button>
                             <button class="btn btn-warning btn-sm" onclick="cetak('<?php echo $d['id_not']; ?>', '<?php echo $d['nama'] ?>')"><i class="bx bx-printer" style="font-size: 14px;"></i></button>
                             <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#myModal<?php echo $d['ids']; ?>"><i class="bx bx-edit" style="font-size: 14px;"></i></button>
                         </td>
@@ -109,6 +110,7 @@ $sans = $conn->query("SELECT ids, nama, kls_din, jenjang_din, dom, no_kamar FROM
         </table>
     </div>
     </form>
+    <iframe id="printFrame" style="display:none;"></iframe>
 </div>
 
 <!-- Modal -->
@@ -468,6 +470,27 @@ require '../tem/foot.php';
                 var printUrl = "../print/payment/nota?" +
                     "id_not=" + id_not;
                 window.open(printUrl, "_blank");
+            }
+        });
+    }
+
+    function printPage(id) {
+        Swal.fire({
+            title: 'Cetak Biodata ?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let printFrame = document.getElementById('printFrame');
+                printFrame.src = '../biodata/index' + "?id=" + id;
+                printFrame.onload = function () {
+                    printFrame.contentWindow.print();
+                };
+                removeParameterFromURL('id');
+            } else {
+                removeParameterFromURL('id');
             }
         });
     }
