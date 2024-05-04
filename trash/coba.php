@@ -13,6 +13,16 @@ if (!$conn2) {
     die("Connection Failed:" . mysqli_connect_error());
 }
 
+// $host = "localhost";
+// $user = "root";
+// $pass = "";
+// $database = "pondok_on";
+
+// $conn2 = mysqli_connect($host, $user, $pass, $database);
+// if (!$conn2) {
+//   die("Connection Failed:" . mysqli_connect_error());
+// }
+
 
 $ids = '202404327';
 
@@ -32,7 +42,7 @@ $ids = '202404327';
 3. hapus pembayaran dan data-nya
 */
 
-hapus($ids, $conn2);
+// hapus($ids, $conn2);
 
 
 function ceksantri($ids, $conn2)
@@ -177,7 +187,8 @@ function updateDataReg($id, $conn2, $idB)
     return "ok";
 }
 
-function updatePerDataReg($id, $conn2, $item, $itemBaru){
+function updatePerDataReg($id, $conn2, $item, $itemBaru)
+{
     $d = $conn2->query("UPDATE registrasi SET $item = '$itemBaru' WHERE id = '$id'");
     if (!$d) {
         return $conn2->error;
@@ -213,4 +224,62 @@ function updatePerDataReg($id, $conn2, $item, $itemBaru){
 // $id = "1587945649854645";
 // echo updateDataReg("d5bc5455-c8fe-4102-a0a1-eaeef4e4e1e4", $conn2, $id);
 
+$thn = date("Y");
+$month = date("m");
+// echo substr($ids,4,2);
+// echo $thn . "\n";
+// echo $month . "\n";
+// $c = $conn2->query("SELECT * FROM santri WHERE SUBSTRING(ids, 1, 4) = '$thn' AND SUBSTRING(ids, 4, 2) >= '$month'");
 
+// if (!$c) {
+//     echo "Error: " . $conn2->error;
+// } else {
+//     if ($c->num_rows > 0) {
+//         while ($row = $c->fetch_assoc()) {
+//             echo $row['ids'] . "\n";
+//         }
+//     } else {
+//         echo "Tidak ada baris yang cocok dengan kriteria.";
+//     }
+// }
+
+
+// $m_d = $conn2->query("SELECT id, name FROM master_data WHERE jenis = 'Diniyah' or name = 'TK'");
+// $sp = $conn2->query("SELECT id_spp, name, jenjang FROM spp");
+// $sans = $conn2->query("SELECT ids, nama, kls_din, jenjang_din, dom, no_kamar FROM santri");
+
+// $no = 1;
+// foreach ($sp as $spp):
+//     echo $spp['id_spp'] . "\n";
+//     echo $no++ . '. ' . $spp['name'];
+// endforeach;
+
+// foreach ($sans as $s) {
+//     if ($s['dom'] != 'LPPK') {
+//         $dom = 'PPK';
+//     } else {
+//         $dom = 'LPPK';
+//     }
+
+//     echo $s['kls_din'] . ' ' . $s['jenjang_din'] . "\n";
+//     echo $s['nama'] . "\n";
+//     echo $s['ids'] . "\n";
+//     echo $s['ids'] . "\n";
+// }
+
+$id = [202404290, 202404343, 202404328];
+
+foreach ($id as $i) {
+    $dataS = cekDataSantri($i, $conn2)->fetch_assoc();
+    echo "ID: " . $dataS['ids'] . ", Name: " . $dataS['nama']."<br>";
+}
+
+function cekDataSantri($id, $conn2)
+{
+    $data = $conn2->query("SELECT * FROM santri WHERE ids = '$id'");
+    if (!$data) {
+        return $conn2->error;
+    }
+    $out = $data->num_rows > 0 ? $data : "tidak ada data";
+    return $out;
+}
