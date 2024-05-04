@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // ids baru
         $sql = "SELECT MAX(SUBSTRING(ids, 7)) AS max_nomor_urut FROM santri";
         $result = $conn->query($sql);
-        
+
         if(!$result){
             throw new Exception("no_insert");
         }
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$sb){
             throw new Exception("Terjadi error pada data calon santri");
         }
-        // 
+        //
 
         $payment = min($pembayaran, $total);
         $id_p = mt_rand(1, 9999);
