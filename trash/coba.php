@@ -246,8 +246,69 @@ $json_data = '[
     }
    ]';
 
-$array_data = json_decode($json_data, true);
-
-foreach ($array_data as $d){
-    echo $d['NIS']. "\n";
-}
+/*
+<pre>Array
+(
+    [ids] => 202305158
+    [id_d] => 0
+    [id_d1] => 0
+    [id_a] => 
+    [id_m] => 0
+    [nama] => ANIS
+    [asal_sekolah] => 
+    [jurusan_sekolah_asal] => 
+    [npsn] => 0
+    [nsm] => 0
+    [nisn] => 0
+    [tahun_masuk] => 2023
+    [thn_masuk_d] => 
+    [thn_masuk_a] => 
+    [thn_masuk_m] => 
+    [no_kk] => 3527112110190009
+    [nik] => 3527115303100004
+    [tempat_lahir] => SAMPANG
+    [tanggal] => 13
+    [bulan] => 3
+    [tahun] => 2010
+    [gender] => WANITA
+    [agama] => ISLAM
+    [dusun] => TOBINGKAR
+    [desa] => TOBAIH TENGAN
+    [kecamatan] => SOKOBANAH
+    [kabupaten] => SAMPANG
+    [provinsi] => JAWA TIMUR
+    [kode_pos] => 
+    [anak_ke] => 1
+    [jumlah_saudara] => 2
+    [gol_darah] => 
+    [ayah] => HAKIP
+    [status_a] => 
+    [nik_a] => 3527111003802009
+    [tl_a] => SAMPANG
+    [tgl_a] => 10
+    [bulan_a] => 3
+    [tahun_a] => 1980
+    [pendidikan_a] => BELUM TAMAT SD
+    [pekerjaan_a] => PETANI
+    [ibu] => HOSIAH
+    [status_i] => 
+    [nik_i] => 3527115705840005
+    [tl_i] => SAMPANG
+    [tgl_i] => 17
+    [bulan_i] => 5
+    [tahun_i] => 1984
+    [pendidikan_i] => TAMAT SD
+    [pekerjaan_i] => MENGURUS RUMAH TANGGA
+    [kls_din] => 
+    [jenjang_din] => PK
+    [kls_am] => 
+    [jenjang_am] => 
+    [dom] => PK
+    [no_kamar] => 
+    [tlpn] => 
+    [no_hp] => 083891024087
+    [status_nikah] => 
+    [email] => 
+    [foto] => 
+    [status] => AKTIF
+*/
