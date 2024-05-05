@@ -9,7 +9,7 @@ function updatePerDataReg($id, $conn2, $item, $itemBaru){
     return "$item sudah di rubah ke $itemBaru";
 }
 
-echo updatePerDataReg("019cb85b-e5a1-4f87-9ae0-975ef2f13189", $conn2, "kls_din", ":");
+echo updatePerDataReg("2022050082", $conn2, "kls_am", "1");
 
 /*
 Array

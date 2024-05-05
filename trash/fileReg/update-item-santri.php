@@ -9,7 +9,7 @@ function updatePerDataSantri($id, $conn2, $item, $itemBaru){
     return "$item sudah di rubah ke $itemBaru";
 }
 
-echo updatePerDataSantri("9216", $conn2, "jenjang_din", "ALIYAH");
+echo updatePerDataSantri("2022050082", $conn2, "jenjang_din", "TSANAWIYAH");
 
 /*
 Array

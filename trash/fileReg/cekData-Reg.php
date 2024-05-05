@@ -11,7 +11,7 @@ function cekDataReg($id, $conn2)
     return $data;
 }
 
-$dataR = cekDataReg("019cb85b-e5a1-4f87-9ae0-975ef2f13189", $conn2)->fetch_assoc();
+$dataR = cekDataReg("1798024922808239", $conn2)->fetch_assoc();
 
 echo '<pre>';
 print_r($dataR);

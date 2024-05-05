@@ -12,7 +12,7 @@ function cekDataSantri($id, $conn2)
     return $out;
 }
 
-$dataS = cekDataSantri("202404359", $conn2)->fetch_assoc();
+$dataS = cekDataSantri("202405478", $conn2)->fetch_assoc();
 
 // echo '<pre>';
 // print_r($dataS);
