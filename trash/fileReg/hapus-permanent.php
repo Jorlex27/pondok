@@ -3,12 +3,7 @@
 require "conn.php";
 
 
-<<<<<<< HEAD
-hapus('1', $conn2);
-
-=======
 hapus('202305072', $conn2);
->>>>>>> 873ea2897e2f5761160152c0a81f596fdbb37db4
 
 function hapus($ids, $conn2)
 {
