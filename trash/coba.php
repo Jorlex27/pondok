@@ -26,7 +26,7 @@ if (!$conn2) {
 
 $json_data = '[
     {
-     "NO": 1,
+
      "NIS": 202305072,
      "NAMA": "MUSLIHAH",
      "KELAS": 1,
