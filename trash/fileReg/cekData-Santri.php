@@ -8,11 +8,11 @@ function cekDataSantri($id, $conn2)
     if (!$data) {
         return $conn2->error;
     }
-    $out = $data->num_rows > 0 ? $data : "tidak ada data";
+    $out = $data->num_rows > 0 ? $data->fetch_assoc() : "tidak ada data";
     return $out;
 }
 
-$dataS = cekDataSantri("202305158", $conn2)->fetch_assoc();
+$dataS = cekDataSantri("202404358", $conn2);
 
 echo '<pre>';
 print_r($dataS);
