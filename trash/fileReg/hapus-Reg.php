@@ -11,4 +11,4 @@ function deleteDataReg($id, $conn2)
     return "ok";
 }
 
-echo deleteDataReg("1797220004198065", $conn2);
+echo deleteDataReg("1797405052176600", $conn2);
