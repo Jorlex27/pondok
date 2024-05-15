@@ -1,18 +1,18 @@
 const mysql = require('mysql2/promise');
 
-const connectionConfig = ({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'pondok_lama'
-});
-
 // const connectionConfig = ({
-//     host: '153.92.13.204',
-//     user: 'u462981871_pondok',
-//     password: 'Norali12',
-//     database: 'u462981871_pondokku'
+//     host: 'localhost',
+//     user: 'root',
+//     password: '',
+//     database: 'pondok_lama'
 // });
+
+const connectionConfig = ({
+    host: '153.92.13.204',
+    user: 'u462981871_pondok',
+    password: 'Norali12',
+    database: 'u462981871_pondokku'
+});
 
 async function createConnection() {
     try {
@@ -24,5 +24,7 @@ async function createConnection() {
         throw error;
     }
 }
+
+// createConnection()
 
 module.exports = { createConnection }
