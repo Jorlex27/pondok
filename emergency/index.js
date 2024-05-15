@@ -1,6 +1,8 @@
 const Model = require('./models/model')
 
-const id = 2024046
+const id = 202405494
 
 
-Model.cek(id)
+// Model.cek(id)
+
+Model.cekData(id)

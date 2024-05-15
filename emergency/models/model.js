@@ -79,6 +79,16 @@ class Model {
             throw ('Terjadi kesalahan:', error);
         }
     }
+
+    static async cekData(id) {
+        try {
+            const connection = await createConnection();
+            const [result] = await connection.execute(`select * from santri where ids = ?`, [id])
+            console.log(result)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = Model
